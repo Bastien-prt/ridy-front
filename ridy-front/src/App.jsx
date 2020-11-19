@@ -5,7 +5,6 @@ import Home from "./components/home/Home";
 import Map from "./components/map/Map";
 import Description from "./components/description/Description";
 import Booking from "./components/booking/Booking";
-import Footer from "./components/home/Footer";
 
 import HomeButton from "./components/homeButton/HomeButton";
 
@@ -19,7 +18,6 @@ function App() {
 				<Route path="/Description" exact component={Description} />
 				<Route path="/Booking" exact component={Booking} />
 			</Switch>
-			<Footer />
 		</div>
 	);
 }

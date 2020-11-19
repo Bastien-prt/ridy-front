@@ -1,0 +1,6 @@
+.carousel {
+  width: 50%;
+  max-width: 50%;
+  overflow: hidden;
+  max-height: 650px;
+}

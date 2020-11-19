@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
-import '../../assets/css/booking.css';
+import React, { useState, Fragment } from "react";
+import "./booking.css";
 
 const Booking = () => {
-  const [form, setForm] = useState({ lastname: '', firstname: '', email: '', DaysNumber:"", message:"" });
-  const [validForm, setValidForm] = useState('');
-  
+  const [form, setForm] = useState({
+    lastname: "",
+    firstname: "",
+    email: "",
+    date: "",
+    message: "",
+  });
+  const [validForm, setValidForm] = useState("");
 
   const handleChange = (e) => {
     setForm({
@@ -15,95 +20,111 @@ const Booking = () => {
 
   const handleValidForm = () => {
     setValidForm(
-      `Félicitation ${form.firstname}, votre monture est en préparation, son propriétaire vous contactera par mail dès qu'il sera de toute beauté !`
+      `Congratulations ${form.firstname}, your ride is sent to preparation, its owner will get in touch with you by e-mail as soon as it is perfectly groomed!`
     );
   };
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
-      handleValidForm()
-      
-      };
+    handleValidForm();
 
-    setForm({ ...form, lastname: '', firstname: '', email: '', DaysNumber:"", message:""  });
+    setForm({
+      ...form,
+      lastname: "",
+      firstname: "",
+      email: "",
+      date: "",
+      message: "",
+    });
   };
 
   return (
-    <div className="form">
-      <h1>Réserver cett belle monture maintenant !</h1>
+    <Fragment>
+      <h1>Book your fabulous ride now!</h1>
+      <div className="form">
+        <form onSubmit={handleSubmit}>
+          <fieldset>
+            <legend>Your information</legend>
 
-      <form onSubmit={handleSubmit}>
-        <fieldset>
-          <legend>Vos Informations</legend>
+            <div className="form-data">
+              <label htmlFor="firstname">
+                <input
+                  type="text"
+                  id="firstname"
+                  name="firstname"
+                  placeholder="Your first name"
+                  onChange={handleChange}
+                  value={form.firstname}
+                  required
+                />
+              </label>
+            </div>
 
-          <div className="form-data">
-            <label htmlFor="firstname">
-              <input
-                type="text"
-                id="firstname"
-                name="firstname"
-                placeholder="Votre prénom"
+            <div className="form-data">
+              <label htmlFor="lastname">
+                <input
+                  type="text"
+                  id="lastname"
+                  name="lastname"
+                  placeholder="Your last name"
+                  onChange={handleChange}
+                  value={form.lastname}
+                  required
+                />
+              </label>
+            </div>
 
-                onChange={handleChange}
-                value={form.firstname}
-                required
-              />
-            </label>
-          </div>
-
-          <div className="form-data">
-            <label htmlFor="lastname">
-              <input
-                type="text"
-                id="lastname"
-                name="lastname"
-                placeholder="Votre nom"
-
-                onChange={handleChange}
-                value={form.lastname}
-                required
-              />
-            </label>
-          </div>
-
-          <div className="form-data">
-            <label htmlFor="email">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Votre e-mail"
-                onChange={handleChange}
-                value={form.email}
-                required
-              />
-            </label>
-          </div>
-          <div className="form-data">
-            <label htmlFor="message">
-              <input
-                type="textarea"
-                id="message"
-                name="message"
-                placeholder="Message"
-                onChange={handleChange}
-                value={form.message}
-                
-              />
-            </label>
-          </div>
-          <div className="form-data">
-            <button type="submit" className="colorButton form-button">
-              Réserver
-            </button>
-          </div>
-          <p>
-            {validForm}
-          </p>
-        </fieldset>
-      </form>
-    </div>
+            <div className="form-data">
+              <label htmlFor="email">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Your e-mail"
+                  onChange={handleChange}
+                  value={form.email}
+                  required
+                />
+              </label>
+            </div>
+            <div className="form-data">
+              <label class="input-label" htmlFor="date">
+                Departing
+                <input
+                  type="date"
+                  id="date"
+                  name="date"
+                  onChange={handleChange}
+                  value={form.date}
+                  required
+                />
+              </label>
+              <label class="input-label" htmlFor="date">
+                Returning
+                <input type="date" id="date" name="date" required />
+              </label>
+            </div>
+            <div className="form-data">
+              <label htmlFor="message">
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Message"
+                  onChange={handleChange}
+                  value={form.message}
+                ></textarea>
+              </label>
+            </div>
+            <div className="form-data">
+              <button type="submit" className="colorButton form-button">
+                Book now!
+              </button>
+            </div>
+            <p>{validForm}</p>
+          </fieldset>
+        </form>
+      </div>
+    </Fragment>
   );
 };
 

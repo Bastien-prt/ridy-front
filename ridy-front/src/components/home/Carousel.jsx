@@ -1,37 +1,62 @@
-import React from "react";
-import "./Carousel.css";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
 import { Carousel } from "react-responsive-carousel";
 
-export default () => (
-  <div className="carousel">
-    <Carousel autoPlay>
-      <div>
-        <img src="https://media.senscritique.com/media/000010056037/source_big/Halo_Combat_Evolved.jpg" />
-        <p className="legend1">Legend 1</p>
-        <div className="carousel-content">
-          <p>
-            This little rascal will take you everywhere you want if you feed him
-            good quality carrots
-          </p>
-        </div>
-      </div>
-      <div>
-        <img src="https://images-na.ssl-images-amazon.com/images/I/51rgXbmpRGL._AC_SY445_.jpg" />
-        <p className="legend2">Legend 2</p>
-        <div className="carousel-content">
-          <p>This girl will tame you with her eyes. Don't ler her fool you.</p>
-        </div>
-      </div>
-      <div>
-        <img src="https://store-images.s-microsoft.com/image/apps.8340.69990143727992974.1a013d7b-2e62-4f4d-a174-a07a940b8151.a7e03e01-7cc2-4818-b25f-fb14bdad643c?mode=scale&q=90&h=225&w=150" />
-        <p className="legend3">Legend 3</p>
-        <div className="carousel-content">
-          <p>
-            Our clients keep telling us that he is the funniest horse we have.
-            You will not forget your journey with him.
-          </p>
-        </div>
-      </div>
-    </Carousel>
-  </div>
-);
+import "./Carousel.css";
+
+const Carousell = () => {
+	// const [picture, setPicture] = useState("");
+
+	// useEffect(() => {
+	// 	axios
+	// 		.get(`https://gitbusters.herokuapp.com/api/rides/1`)
+	// 		.then((response) => console.log(response));
+	// }, []);
+
+	return (
+		<div className="carousel">
+			<p className="rent">Discover this month 3 best rides!</p>
+			<Carousel autoPlay>
+				<div>
+					<img
+						className="picture"
+						src="https://horsefactsbymarshahubler.files.wordpress.com/2014/04/british-spotted-pony-1.jpg"
+						alt="NightMare"
+					/>
+					<div className="carousel-content">
+						<p>Nice pony, a bit grumpy when hungry</p>
+					</div>
+				</div>
+				<div>
+					<img
+						className="picture"
+						src="https://www.connexionfrance.com/var/connexion/storage/images/_aliases/articleimage/media/images/brown-horse-in-field/1112142-1-eng-GB/Brown-horse-in-field.jpg"
+						alt="Harry Trotter"
+					/>
+					<div className="carousel-content">
+						<p>
+							This nice horse will get you to your destination, but be patient,
+							he can be a little mischievious!
+						</p>
+					</div>
+				</div>
+				<div>
+					<img
+						className="picture"
+						src="https://france3-regions.francetvinfo.fr/image/1LOftSfF__BZyqbG2HJGeeGkByg/1200x900/regions/2020/06/26/5ef647bc0af88_52290083_256635521926291_3024432492858834944_o-4897792.jpg"
+						alt="Maple Stirrup"
+					/>
+					<div className="carousel-content">
+						<p>
+							Maple Stirrup may be a mule, but he is very cosy and roomy. Buckle
+							up for a ride you'll never forget!
+						</p>
+					</div>
+				</div>
+			</Carousel>
+		</div>
+	);
+};
+
+export default Carousell;

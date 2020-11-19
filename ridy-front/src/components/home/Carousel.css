@@ -1,6 +1,15 @@
 .carousel {
-  width: 50%;
-  max-width: 50%;
+  width: 80%;
+  max-width: 80%;
   overflow: hidden;
   max-height: 650px;
 }
+
+.carousel .thumbs {
+  display: none;
+}
+
+/* div {
+  display: flex;
+  justify-content: center;
+} */

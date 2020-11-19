@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import "../../style/description.css";
 
-const Description = () => {
+const Description = ({ match }) => {
   const [ride, setRide] = useState({});
-  //   const { id } = match.params;
+  const { id } = match.params;
 
   useEffect(() => {
     axios
-      .get(`https://gitbusters.herokuapp.com/api/rides/1`)
-      .then((response) => response.data)
-      .then((data) => setRide(data[0]));
+      .get(`https://gitbusters.herokuapp.com/api/rides/${id}`)
+      .then((response) => console.log(response));
+    // .then((data) => setRide(data[0]));
   }, []);
 
   return (
@@ -76,8 +77,14 @@ const Description = () => {
             </div>
           </div>
         </div>
-
-        <button className='myButton'>Book</button>
+        <Link
+          to='/booking'
+          style={{
+            textDecoration: "none",
+            width: "100%",
+          }}>
+          <button className='myButton'>Book</button>
+        </Link>
       </div>
     </div>
   );

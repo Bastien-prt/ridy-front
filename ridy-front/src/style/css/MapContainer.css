@@ -1,0 +1,34 @@
+.test1{
+   
+    display:flex;
+    flex-direction:column-reverse;
+
+   
+
+    border: 1px solid black;
+    color: black;
+    font-size: 1.2em;
+    
+    z-index: 1000;
+    width: 100%;
+    margin-bottom:0px ;
+    margin-top: 0px;
+}
+
+.map {
+    height: 30px;
+    width: 30px;
+
+}
+
+
+element.style {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+}
+
+.map-box{
+    /* display: flex;
+    flex-direction: column-reverse; */
+}

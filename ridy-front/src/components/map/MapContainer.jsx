@@ -1,18 +1,18 @@
-import React, {Component}  from "react";
+import React, { useState, useEffect }  from "react";
 
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 
+import '../../style/css/MapContainer.css'
+
 const mapStyles = {
-    width: '100%',
-    height: '100%',
+    width: '400px',
+    height: '400px',
   };
 
-
-class MapContainer extends Component {
-    constructor(props){
-        super(props)
-        this.state={
-            stores:[
+  const MapContainer = ({google}) => {
+    const[info, setInfo]=useState("");
+    
+    const [stores, setStores]= useState([
                 {latitude: 44.8115510558411, longitude: -0.5972854563965946},
                 {latitude: 44.80475549452777, longitude: -0.6309465089812427},
                 {latitude: 44.84089121384058, longitude: -0.5808519179932325},
@@ -23,42 +23,57 @@ class MapContainer extends Component {
                 {latitude: 44.83020363562137, longitude: -0.5272349788806885},
                 {latitude: 44.8443910864143, longitude: -0.6520393168553262},
                 {latitude: 44.88140146099171, longitude: -0.6122024361043721},
-            ]
-        }
-    }
-        displayMarkers = () => {
-            return this.state.stores.map((store, index) => {
+    ]);
+
+
+
+        const displayMarkers = () => {
+            return stores.map((store, index) => {
               return <Marker key={index} id={index} position={{
                lat: store.latitude,
                lng: store.longitude
              }}
-             onClick={() => console.log("You clicked me!")} />
+             
+             onClick={()=>setInfo(<div>
+             <p> Petit Soleil </p>
+             <p> 4 personnes </p>
+             <p> 400 € </p>
+             <button>Book now</button>
+             </div>)} />
+             
+            
             })
+            
+            
           }
+
+      
     
 
-    render(){
+    
         return (
-            <div> 
-                {/* <p>Hello sur map</p> */}
-                <Map
-                    google={this.props.google}
-                    zoom={11}
-                    style={mapStyles}
-                    initialCenter={{ lat: 44.833, lng: -0.5667}}>
+               <div className="map-box">
+                 
+                  {/* <div className="map-box"> */}
+                  <p className="test1">{info}</p> 
+                      <Map
+                          // className="map"
+                          google={google}
+                          zoom={11}
+                          style={mapStyles}
+                          initialCenter={{ lat: 44.833, lng: -0.5667}}>
+                              
 
-                    {this.displayMarkers()}
-                
-
-                </Map>
-
-                
-
-                
-
-            </div>
+                          {displayMarkers() } 
+                          
+                      </Map> 
+                  
+                      
+                      </div>
+           
         )
-    }
+        
+    
     
 }
 
@@ -66,4 +81,3 @@ class MapContainer extends Component {
 export default GoogleApiWrapper({
     apiKey: 'AIzaSyDQ3MLXcFAxS3N8ZCdSYloha8UsTNk8h3Q'
   })(MapContainer);
-  

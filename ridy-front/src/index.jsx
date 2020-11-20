@@ -7,12 +7,12 @@ import { render } from "react-dom";
 import App from "./App";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <App />
-    </Router>
-  </React.StrictMode>,
-  document.getElementById("root")
+	<React.StrictMode>
+		<Router>
+			<App />
+		</Router>
+	</React.StrictMode>,
+	document.getElementById("root")
 );
 
 // render(<App />, document.getElementById("root"));

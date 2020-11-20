@@ -1,15 +1,11 @@
-import React, { useState, useEffect }  from "react";
+import React, { useState, useEffect } from "react";
 
 import MapContainer from "./MapContainer";
 
-import '../../style/css/MapContainer.css'
+import "../../style/css/MapContainer.css";
 
 const ResultPage = () => {
-    return (
-        <div>
-            <MapContainer/>
-        </div>
-    )
-}
+	return <MapContainer />;
+};
 
 export default ResultPage;

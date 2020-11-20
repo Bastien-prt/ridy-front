@@ -1,126 +1,124 @@
 .descriptionPage {
-  height: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: top;
+	height: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: top;
 }
 .description-bio {
-  padding: 10px;
-  font-size: 17px;
-  font-style: italic;
+	padding: 10px;
+	font-size: 17px;
+	font-style: italic;
 }
 .descriptionDetails {
-  border-top-color: rgb(152, 152, 152);
-  font-size: 14px;
-  margin-top: 30px;
+	border-top-color: rgb(152, 152, 152);
+	font-size: 14px;
+	margin-top: 30px;
 }
 
 .rideDescription {
-  width: 300px;
-  height: 700px;
-  background: white;
-  color: rgb(31, 31, 31);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 15px 15px 0 0;
+	width: 100%;
+	height: 700px;
+	background: white;
+	color: rgb(31, 31, 31);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .ridePicture {
-  height: 250px;
-  border-radius: 15px 15px 0 0;
+	height: 250px;
+	width: 100%;
 }
 
 .ridePicture img {
-  width: 300px;
-  height: 250px;
-  border-radius: 15px 15px 0 0;
-  object-fit: cover;
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
 }
 .image-icone {
-  height: 25px;
-  margin-right: 15px;
+	height: 25px;
+	margin-right: 15px;
 }
 
 .descriptionLogo {
-  display: flex;
-  width: 80%;
-  margin-left: 10px;
-  margin-bottom: 20px;
+	display: flex;
+	width: 80%;
+	margin-left: 10px;
+	margin-bottom: 20px;
 }
 
 .infodescription {
-  width: 300px;
-  height: 370px;
-  justify-content: center;
-  align-items: flex-end;
+	width: 300px;
+	height: 370px;
+	justify-content: center;
+	align-items: flex-end;
 }
 .descriptionTitle {
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+	height: 60px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
 }
 
 .h1-description {
-  margin: 0;
-  padding: 10px;
-  font-size: 25px;
+	margin: 0;
+	padding: 10px;
+	font-size: 25px;
 }
 .priceLogo {
-  display: flex;
-  align-items: flex-end;
+	display: flex;
+	align-items: flex-end;
 }
 
 .priceLogo p {
-  margin-block-end: 0;
-  margin-inline-end: 5px;
-  font-size: 20px;
+	margin-block-end: 0;
+	margin-inline-end: 5px;
+	font-size: 20px;
 }
 
 .infoprice {
-  padding: 16px 8px;
-  border: 0;
-  text-align: center;
-  background: none;
-  height: 60px;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 36px;
-  color: #390446;
+	padding: 16px 8px;
+	border: 0;
+	text-align: center;
+	background: none;
+	height: 60px;
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 36px;
+	color: #390446;
 }
 
 .corpsdescription {
-  display: flex;
-  width: 300px;
-  justify-content: space-between;
-  align-items: flex-start;
+	display: flex;
+	width: 300px;
+	justify-content: space-between;
+	align-items: flex-start;
 }
 
 .myButton {
-  background-color: #b5b5b5;
-  border-radius: 5px;
-  border: 1px solid #ffffff;
-  display: inline-block;
-  cursor: pointer;
-  color: #fcfcfc;
-  font-family: Arial;
-  font-size: 17px;
-  padding: 16px 31px;
-  text-decoration: none;
-  width: 100%;
-  text-shadow: 0px 1px 0px #000000;
+	background-color: #b5b5b5;
+	border-radius: 5px;
+	border: 1px solid #ffffff;
+	display: inline-block;
+	cursor: pointer;
+	color: #fcfcfc;
+	font-family: Arial;
+	font-size: 17px;
+	padding: 16px 31px;
+	text-decoration: none;
+	width: 100%;
+	text-shadow: 0px 1px 0px #000000;
 }
 .myButton:hover {
-  background-color: #b01aa7;
+	background-color: #b01aa7;
 }
 .myButton:active {
-  position: relative;
-  top: 1px;
+	position: relative;
+	top: 1px;
 }
 
 Link {
-  text-decoration: none;
-  width: 100%;
+	text-decoration: none;
+	width: 100%;
 }

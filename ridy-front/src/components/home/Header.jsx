@@ -13,17 +13,17 @@ const Header = () => {
 			<div className="container-content-banner">
 				<div className="container-text-presentation">
 					<h1 className="presentation">
-						{" "}
-						Rent your ride <p> anytime</p> <p>anywhere </p>{" "}
+						Rent your ride.<p>Anywhere.</p>
+						<p>Anytime.</p>
 					</h1>
-					<p className="informations"> We will provide you some carrots ... </p>
+					<p className="informations"> We will provide you some carrots... </p>
 				</div>
 			</div>
 			<div className="container-where">
-				<p className="rent"> Where do you want to rent ? </p>
+				<p className="rent">Where shall you leave from? </p>
 
 				<select name="city" id="city" onChange={HandleCity}>
-					<option value="">-- Please choose a city --</option>
+					<option value="">-- Please select a city --</option>
 					<option value="Bordeaux"> Bordeaux </option>
 					<option value="Nantes"> Nantes </option>
 					<option value="Toulouse"> Toulouse </option>

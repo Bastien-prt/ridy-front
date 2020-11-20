@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+// import axios from "axios";
 
 import { Carousel } from "react-responsive-carousel";
 
@@ -16,7 +16,7 @@ const Carousell = () => {
 
 	return (
 		<div className="carousel">
-			<p className="rent">Discover this month 3 best rides!</p>
+			<p className="rent">This month 3 best rides!</p>
 			<Carousel autoPlay>
 				<div>
 					<img
@@ -25,7 +25,7 @@ const Carousell = () => {
 						alt="NightMare"
 					/>
 					<div className="carousel-content">
-						<p>Nice pony, a bit grumpy when hungry</p>
+						<p>Nice pony, a bit grumpy when hungry.</p>
 					</div>
 				</div>
 				<div>

@@ -1,0 +1,46 @@
+:root {
+    --light:rgb(238, 218, 187);
+    --dark: #bd8d51;
+    --main-color: #f5d7ad;
+    --color-button :rgb(191, 108, 20);
+    --color-button2 :#7e897b;
+    --spacing: 8px;
+    
+  
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+ 
+  body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+  }
+
+
+  
+  h1 {
+    font-family: 'Turret Road', cursive;
+    font-size: 35px;
+  }
+  
+  h2 {
+    font-size: 30px;
+    font-weight: lighter;
+    text-transform: uppercase;
+  }
+  
+  h3 {
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: lighter;
+  }
+  h4 {
+    text-transform: uppercase;
+  }
+  
+  

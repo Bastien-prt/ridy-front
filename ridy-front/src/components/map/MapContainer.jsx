@@ -1,67 +1,108 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 
 import "../../style/css/MapContainer.css";
 
 const mapStyles = {
-  width: "400px",
-  height: "400px",
+  width: "100%",
+  height: "100%",
 };
 
-const MapContainer = ({ google }) => {
+const MapContainer = ({ google, location }) => {
+  const { city } = location.state;
   const [info, setInfo] = useState("");
+  const [newArray, setNewArray] = useState([]);
 
-  const [stores, setStores] = useState([
-    { latitude: 44.8115510558411, longitude: -0.5972854563965946 },
-    { latitude: 44.80475549452777, longitude: -0.6309465089812427 },
-    { latitude: 44.84089121384058, longitude: -0.5808519179932325 },
-    { latitude: 44.83502127197189, longitude: -0.574980164319232 },
-    { latitude: 44.849623961794585, longitude: -0.5751784382387548 },
-    { latitude: 44.85589543401733, longitude: -0.5903870243578702 },
-    { latitude: 44.84873951631123, longitude: -0.5588456712662726 },
-    { latitude: 44.83020363562137, longitude: -0.5272349788806885 },
-    { latitude: 44.8443910864143, longitude: -0.6520393168553262 },
-    { latitude: 44.88140146099171, longitude: -0.6122024361043721 },
-  ]);
+  useEffect(() => {
+    axios
+      .get("https://gitbusters.herokuapp.com/api/rides")
+      .then((result) => result.data)
+      .then((data) => setNewArray(data.filter((item) => item.city === city)));
+  }, [city]);
 
-  const displayMarkers = () => {
-    return stores.map((store, index) => {
+  let coordCity = {};
+  let coordBordeaux = { lat: 44.833, lng: -0.5667 };
+  let coordNantes = { lat: 47.218371, lng: -1.553621 };
+  let coordToulouse = { lat: 43.604652, lng: 1.444209 };
+  let coordBrest = { lat: 48.390394, lng: -4.486076 };
+  let coordBayonne = { lat: 43.492949, lng: -1.474841 };
+  let coordLyon = { lat: 45.764043, lng: 4.835659 };
+
+  switch (city) {
+    default:
+      coordCity = coordBordeaux;
+      break;
+    case "Nantes":
+      coordCity = coordNantes;
+      break;
+    case "Toulouse":
+      coordCity = coordToulouse;
+      break;
+    case "Brest":
+      coordCity = coordBrest;
+      break;
+    case "Bayonne":
+      coordCity = coordBayonne;
+      break;
+    case "Lyon":
+      coordCity = coordLyon;
+      break;
+  }
+
+  const handleClick = (array) => {
+    setInfo(
+      <div className="boxPoney">
+        <img className="image-map" src={array.photo} alt="yo" />
+        <div className="box-info-poney">
+          <div className="info">
+            {" "}
+            <span>{array.name}</span>
+          </div>
+          <div className="descriptionBbio"># {array.description}</div>
+          <div className="info">
+            {" "}
+            {array.seat} {array.seat > 1 ? "people" : "person"} - {array.price}{" "}
+            golden coin{array.price > 1 && "s"}
+          </div>
+        </div>
+        <div className="buttonCadre">
+          <Link to={`/description/${array.id}`}>
+            <button className="bookNow">More info</button>
+          </Link>
+        </div>
+      </div>
+    );
+  };
+
+  const displayMarkers = (e) => {
+    return newArray.map((array) => {
       return (
         <Marker
-          key={index}
-          id={index}
+          key={array.id}
+          id={array.id}
           position={{
-            lat: store.latitude,
-            lng: store.longitude,
+            lat: array.latitude,
+            lng: array.longitude,
           }}
-          onClick={() =>
-            setInfo(
-              <div>
-                <p> Petit Soleil </p>
-                <p> 4 personnes </p>
-                <p> 400 € </p>
-                <Link to='/Booking'>
-                  <button>Book now</button>
-                </Link>
-              </div>
-            )
-          }
+          onClick={() => handleClick(array)}
         />
       );
     });
   };
 
   return (
-    <div className='map-box'>
-      {/* <div className="map-box"> */}
-      <p className='test1'>{info}</p>
+    <div className="map-box">
+      <p className="test1">{info}</p>
+
       <Map
-        // className="map"
+        className="mapSepia"
         google={google}
-        zoom={11}
+        zoom={12}
         style={mapStyles}
-        initialCenter={{ lat: 44.833, lng: -0.5667 }}>
+        initialCenter={coordCity}
+      >
         {displayMarkers()}
       </Map>
     </div>

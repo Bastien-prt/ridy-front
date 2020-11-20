@@ -1,126 +1,262 @@
 .descriptionPage {
-  height: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: top;
+	height: auto;
+	display: flex;
+	flex-direction:column;
+	justify-content: center;
+	align-items: flex-start;
 }
 .description-bio {
-  padding: 10px;
-  font-size: 17px;
-  font-style: italic;
+	padding: 10px;
+	font-size: 17px;
+	font-style: italic;
 }
 .descriptionDetails {
-  border-top-color: rgb(152, 152, 152);
-  font-size: 14px;
-  margin-top: 30px;
+	border-top-color: rgb(152, 152, 152);
+	font-size: 14px;
+	margin-top: 30px;
 }
 
 .rideDescription {
-  width: 300px;
-  height: 700px;
-  background: white;
-  color: rgb(31, 31, 31);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 15px 15px 0 0;
+	/* border: 1px solid red; */
+	width: 100%;
+	background:var(--light);
+	color: rgb(31, 31, 31);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .ridePicture {
-  height: 250px;
-  border-radius: 15px 15px 0 0;
+	height: 250px;
+	width: 100%;
+	filter: sepia(0.5);
 }
 
 .ridePicture img {
-  width: 300px;
-  height: 250px;
-  border-radius: 15px 15px 0 0;
-  object-fit: cover;
+	width: 100%;
+	height: 250px;
+	
+
 }
 .image-icone {
-  height: 25px;
-  margin-right: 15px;
+	height: 25px;
+	margin-right: 15px;
 }
 
 .descriptionLogo {
-  display: flex;
-  width: 80%;
-  margin-left: 10px;
-  margin-bottom: 20px;
+	display: flex;
+	width: 80%;
+	margin-left: 10px;
+	margin-bottom: 20px;
 }
 
 .infodescription {
-  width: 300px;
-  height: 370px;
-  justify-content: center;
-  align-items: flex-end;
+	width: 300px;
+	justify-content: center;
+	align-items: flex-end;
 }
 .descriptionTitle {
-  height: 60px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+	height: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
 }
 
-.h1-description {
-  margin: 0;
-  padding: 10px;
-  font-size: 25px;
+.h1-description h1 {
+	margin: 0;
+	padding: 10px;
+	font-size: 25px;
+	margin-top:0;
+	margin-block-start: 0;
 }
 .priceLogo {
-  display: flex;
-  align-items: flex-end;
+	display: flex;
+	align-items: flex-end;
+	margin-bottom:10px;
 }
 
 .priceLogo p {
-  margin-block-end: 0;
-  margin-inline-end: 5px;
-  font-size: 20px;
+	margin-block-end: 0;
+	margin-inline-end: 5px;
+	font-size: 20px;
 }
 
 .infoprice {
-  padding: 16px 8px;
-  border: 0;
-  text-align: center;
-  background: none;
-  height: 60px;
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 36px;
-  color: #390446;
+	padding: 16px 8px;
+	border: 0;
+	text-align: center;
+	background: none;
+	height: 60px;
+	font-size: 22px;
+	font-weight: 700;
+	line-height: 36px;
+	color: #390446;
 }
 
-.corpsdescription {
-  display: flex;
-  width: 300px;
-  justify-content: space-between;
-  align-items: flex-start;
-}
+
 
 .myButton {
-  background-color: #b5b5b5;
-  border-radius: 5px;
-  border: 1px solid #ffffff;
-  display: inline-block;
-  cursor: pointer;
-  color: #fcfcfc;
-  font-family: Arial;
-  font-size: 17px;
-  padding: 16px 31px;
-  text-decoration: none;
-  width: 100%;
-  text-shadow: 0px 1px 0px #000000;
+	/* border: 1px solid blue; */
+	background-color:var(--color-button);
+	display: flex;
+	justify-content: center;
+	cursor: pointer;
+	color: var(--main-color);
+	font-family: 'Montserrat', sans-serif;
+	font-size: 17px;
+	padding: 16px 0px;
+	text-decoration: none;
+	letter-spacing: 2px;
+	width: 40%;
+	margin:8px auto;
+	box-shadow: 1px 1px 3px black;
+
 }
+
+
 .myButton:hover {
-  background-color: #b01aa7;
+	background-color: var(--color-button2);
 }
 .myButton:active {
-  position: relative;
-  top: 1px;
+	position: relative;
+	top: 1px;
 }
 
 Link {
-  text-decoration: none;
-  width: 100%;
+	text-decoration: none;
+	width: 100%;
 }
+
+
+@media screen and (min-width: 920px) {
+	.rideDescritiopn {
+	  display: flex;
+	  flex-wrap: wrap;
+	} 
+	.descriptionDetails {
+		border-top-color: rgb(152, 152, 152);
+		font-size: 16px;
+		margin-top: 30px;
+	}
+
+	.ridePicture img {
+		width: 100%;
+		height: auto;
+		opacity: 0.8;
+		
+	}
+
+	.ridePicture {
+		height: 600px;
+		width: 100%;
+		filter: sepia(0.5);
+		overflow: hidden;
+	}
+	
+
+	.infodescription {
+		width: auto;
+		align-items: self-end;
+		display: flex;
+		justify-content: center;
+		margin-left: 10px;
+	margin-bottom: 10px;}
+
+
+.madivOk {
+	width:100px;
+	width: 900px;
+	display: flex;
+	flex-direction: column;
+    align-items: baseline;
+}
+
+.description-bio {
+	padding: 20px;
+	padding-top:60px;
+    width: 600px;
+    font-size: 19px;
+    font-style: italic;
+}
+
+.h1-description{
+	
+		font-family: 'Turret Road', cursive;
+		font-size: 35px;
+		width: max-content;
+		padding-right: 15px;
+	
+}
+
+.corpsdescription {
+
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+
+	/* .ridePicture img{
+		height: 800px;
+		width: 600px;
+	  
+	} */
+	
+  
+
+
+  	
+
+	.infodescription {
+		width: auto;
+		align-items: self-end;
+		display: flex;
+		justify-content: center;
+		margin-left: 10px;
+	margin-bottom: 10px;}
+
+
+.madivOk {
+	width:100px;
+	width: 900px;
+	display: flex;
+	flex-direction: column;
+    align-items: baseline;
+}
+
+.description-bio {
+	padding: 20px;
+	padding-top:60px;
+    width: 600px;
+    font-size: 19px;
+    font-style: italic;
+}
+
+.h1-description{
+	
+		font-family: 'Turret Road', cursive;
+		font-size: 35px;
+		width: max-content;
+		padding-right: 15px;
+	
+}
+
+.corpsdescription {
+
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+
+	/* .ridePicture img{
+		height: 800px;
+		width: 600px;
+	  
+	} */
+	
+  }
+
+
+  

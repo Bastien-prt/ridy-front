@@ -3,7 +3,7 @@ body {
 }
 .container-content-banner {
 	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-		url("https://cdn.pixabay.com/photo/2017/08/01/14/42/knight-2565957_960_720.jpg");
+		url("https://i.pinimg.com/originals/09/a2/41/09a241f9917145c127089bcf43737fa6.jpg");
 	background-repeat: no-repeat;
 	background-position: center center;
 	height: 100vh;
@@ -11,8 +11,10 @@ body {
 	background-size: cover;
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
 	align-items: center;
 	margin: 0;
+	
 }
 
 .container-text-presentation {
@@ -20,8 +22,8 @@ body {
 	text-align: center;
 }
 
-.presentation {
-	font-size: 2em;
+h1.presentation {
+	font-size: 80px;
 }
 
 .informations {
@@ -30,62 +32,167 @@ body {
 	font-style: italic;
 }
 
-.container-where {
-	padding-left: 10px;
-	margin: 30px auto;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-}
+
 .rent {
-	font-weight: bold;
 	font-size: 25px;
 	text-align: center;
+	
 }
+
+.custom-select{
+	display: flex;
+	justify-content: center;
+	position: relative;
+	margin-top: 20px
+}
+
 #city {
-	width: 200px;
-	border: 2px solid rgba(241, 155, 65, 0.6);
-	padding-left: 10px;
-	padding-top: 5px;
-	margin: 16px auto;
+	/* width: 200px; */
+	/* margin: 25px auto; */
 	font-style: italic;
 	background-color: white;
-	border: none;
-	border-bottom: 1px solid gray;
-
+	border: 1px solid white;
+	/* border-radius: 11px; */
+	padding: 10px 55px 8px 10px;
 	cursor: pointer;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+	color: grey;
 }
 
+.custom-arrow{
+	position: absolute;
+	top: 0;
+	right:0;
+	display:block;
+	background: rgba(241, 155, 65, 1) ;
+	height: 100%;
+	width: 2rem;
+	pointer-events: none;
+}
+.custom-arrow::before,
+.custom-arrow::after{
+	--size: 0.4em;
+
+	content:"";
+	position: absolute;
+	width:0;
+	height:0;
+
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.custom-arrow::before{
+	border-left: var(--size) solid transparent;
+	border-right: var(--size)  solid transparent;
+	border-bottom: var(--size)  solid white;
+
+	top: 35%;
+}
+.custom-arrow::after{
+	border-left: var(--size) solid transparent;
+	border-right: var(--size)  solid transparent;
+	border-top: var(--size)  solid white;
+	top: 60%;
+}
+
+
+
 .container-boutton {
-	/* border:1px solid red; */
 	display: flex;
 	justify-content: center;
 }
+
 .link-search {
-	/* margin-bottom: 20px;
-    margin-bottom: 120px;
-    font-weight: bold;
-    color: black;
-    text-decoration: none;
-    background-color: rgba(241, 155, 65, 0.6);
-    border-radius: 6px;
-    padding: 10px 17px; */
-	float: left;
-	padding: 10px 40px;
-	border-radius: 10px;
-	font-size: 25px;
-	color: black;
-	background-color: rgba(241, 155, 65, 0.5);
+	background-color:var(--color-button);
+	display: inline-block;
+	cursor: pointer;
+	color: var(--main-color);
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 2px;
+	font-size: 19px;
 	text-decoration: none;
-	border-bottom: 3px solid whi;
-	text-shadow: 0px -2px rgba(241, 155, 65, 0.8);
-	transition: all 0.1s;
-	-webkit-transition: all 0.1s;
-	margin-bottom: 10px;
+	margin-top:60px;
+	text-align: center;
+	box-shadow: 1px 1px 3px black;
+	padding: 10px 14px;
+	border-radius: 8px;
+	
 }
 
 .link-search:active {
 	transform: translate(0px, 5px);
 	-webkit-transform: translate(0px, 5px);
 	border-bottom: 1px solid;
+}
+
+
+.container-where {
+	border-radius: 10px 10px 0px 0px;
+	padding: 2px 12px ;
+	margin-top: 30px;
+	margin-bottom: 70px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	
+}
+
+.about-ridy{
+	border-bottom: 3px solid rgba(241, 155, 65, 1) ;
+	width: 170px;
+	margin: 1px auto;
+	/* border: 1px solid black; */
+	text-align: center;
+	font-family: 'Turret Road', cursive;
+	font-size: 35px;
+
+
+}
+
+.information-about{	
+	font-size: 1.4em;
+	width:80%;
+	margin : 40px auto;
+	text-align: center;
+	
+}
+
+.try{
+	margin-top: 15px;
+	font-weight: bold;
+}
+
+.try-a{
+	text-decoration: none;
+	color: rgba(241, 155, 65, 0.7);
+}
+
+.try-a:hover{
+	text-shadow: 0px 0px 1px  rgba(241, 155, 65, 0.9);
+}
+
+.advantages {
+	display:flex;
+	width: 80%;
+	justify-content: space-around;
+	flex-wrap:wrap;
+	align-items: flex-start;
+	margin: 30px;
+
+}
+.advantage {
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+	align-items:center;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.advantage p {
+	margin-top:10px;
+	color:black;
+	font-size:14px;
+	font-style:normal;
 }

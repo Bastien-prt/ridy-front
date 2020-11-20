@@ -1,34 +1,62 @@
-.test1{
-   
-    display:flex;
-    flex-direction:column-reverse;
+body{
+    margin: 0px;
+}
 
-   
-
-    border: 1px solid black;
-    color: black;
-    font-size: 1.2em;
+.boxPoney {
     
-    z-index: 1000;
-    width: 100%;
-    margin-bottom:0px ;
-    margin-top: 0px;
-}
-
-.map {
-    height: 30px;
-    width: 30px;
-
-}
-
-
-element.style {
+    margin-top: 420px;
+    margin-left: 100px;
     position: absolute;
-    width: 0px;
-    height: 0px;
+    z-index: 1000;
+    border: solid 4px white;
+    border-radius: 15px;
+    width: 210px;
+    font-size: 0.8em;
+    background-color:white;
 }
 
+.bookNow {
+    background-color: #b5b5b5;
+    border-radius: 15px;
+    border: 1px solid #ffffff;
+    display: inline-block;
+    cursor: pointer;
+    color: #fcfcfc;
+    font-family: Arial;
+    font-size: 14px;
+    padding: 9px 21px;
+    text-decoration: none;
+    width: 100%;
+    text-shadow: 0px 1px 0px #000000;
+    margin-top: 8px;
+  }
+
+  .bookNow:hover {
+    background-color: #b01aa7;
+  }
+  .bookNow:active {
+    position: relative;
+    top: 1px;
+  }
+
+  .info{
+      margin-bottom: 3px;
+      margin-top: 3px;
+      padding-left: 25%;
+  }
+
+  .box-info-poney{
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+  }
+.image-map{
+    border-radius: 13px 13px 2px 2px;
+    height: 130px;
+    margin-top: 0px;
+    width:100%;
+    
+}
 .map-box{
-    /* display: flex;
-    flex-direction: column-reverse; */
+    width:50%
 }

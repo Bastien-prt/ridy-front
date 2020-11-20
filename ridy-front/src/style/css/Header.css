@@ -39,13 +39,12 @@ body {
 }
 .rent {
 	font-weight: bold;
-	font-size: 1.6em;
+	font-size: 25px;
 	text-align: center;
 }
 #city {
-	width: 70%;
-	/* border: 2px solid rgba(241, 155, 65, 0.6) ; */
-	border-radius: 7px;
+	width: 200px;
+	border: 2px solid rgba(241, 155, 65, 0.6);
 	padding-left: 10px;
 	padding-top: 5px;
 	margin: 16px auto;

@@ -2,8 +2,13 @@
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: flex-start;
+	justify-content: space-around;
 }
+
+.confirmation p {
+	text-align: center;
+}
+
 .form {
 	display: flex;
 	justify-content: center;
@@ -33,6 +38,7 @@ h1 {
 
 fieldset {
 	border: solid black;
+	margin-bottom: 60px;
 }
 
 input {

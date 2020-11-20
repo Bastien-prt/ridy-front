@@ -27,7 +27,7 @@ const MapContainer = ({ google, location }) => {
 	let coordNantes = { lat: 47.218371, lng: -1.553621 };
 	let coordToulouse = { lat: 43.604652, lng: 1.444209 };
 	let coordBrest = { lat: 48.390394, lng: -4.486076 };
-	let coordBayonne = { lat: -1.474841, lng: 43.492949 };
+	let coordBayonne = { lat: 43.492949, lng: -1.474841 };
 	let coordLyon = { lat: 45.764043, lng: 4.835659 };
 
 	switch (city) {

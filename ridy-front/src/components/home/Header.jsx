@@ -12,18 +12,19 @@ const Header = () => {
 		<div>
 			<div className="container-content-banner">
 				<div className="container-text-presentation">
-					<h1 className="presentation">
-						Rent your ride.<p>Anywhere.</p>
-						<p>Anytime.</p>
-					</h1>
-					<p className="informations"> We will provide you some carrots... </p>
+					<h1 className="presentation">Ridy.</h1>
+					<h2>
+						Rent your ride.
+						<p>Anywhere, anytime.</p>
+					</h2>
+					<p className="informations"> We shall provide some carrots... </p>
 				</div>
 			</div>
 			<div className="container-where">
 				<p className="rent">Where shall you leave from? </p>
 
 				<select name="city" id="city" onChange={HandleCity}>
-					<option value="">-- Please select a city --</option>
+					<option value="">Please select a city</option>
 					<option value="Bordeaux"> Bordeaux </option>
 					<option value="Nantes"> Nantes </option>
 					<option value="Toulouse"> Toulouse </option>

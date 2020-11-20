@@ -3,9 +3,9 @@ body {
 }
 
 .boxPoney {
-	margin-top: 420px;
-	margin-left: 100px;
 	position: absolute;
+	bottom: 15px;
+	right: 80px;
 	z-index: 1000;
 	border: solid 4px white;
 	border-radius: 15px;

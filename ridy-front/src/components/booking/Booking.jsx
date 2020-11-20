@@ -1,8 +1,8 @@
 import React, { useState, Fragment } from "react";
 import "./booking.css";
 
-const Booking = (location) => {
-	// const { ride } = location.state;
+const Booking = ({ location }) => {
+	const { ride } = location.state;
 	const [form, setForm] = useState({
 		lastname: "",
 		firstname: "",
@@ -41,11 +41,12 @@ const Booking = (location) => {
 
 	return (
 		<div className="confirmation">
-			{/* <p>
-				Buckle up with <strong>{ride.name}</strong> for {ride.price} per day!
-			</p> */}
 			<Fragment>
-				<h1>Book your fabulous ride!</h1>
+				<h1>Want to book your fabulous ride?</h1>
+				<p>
+					Buckle up with <strong>{ride.name}</strong> for {ride.price} coin
+					{ride.price > 1 && "s"} per day!
+				</p>
 				<div className="form">
 					<form onSubmit={handleSubmit}>
 						<fieldset>

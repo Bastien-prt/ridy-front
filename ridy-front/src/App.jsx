@@ -9,16 +9,17 @@ import Booking from "./components/booking/Booking";
 import HomeButton from "./components/homeButton/HomeButton";
 
 function App() {
-  return (
-    <div className='App'>
-      <Switch>
-        <Route exact path='/' component={Home} />
-        <Route path='/Map' exact component={MapContainer} />
-        <Route path='/Description/:id' exact component={Description} />
-        <Route path='/Booking' exact component={Booking} />
-      </Switch>
-    </div>
-  );
+	return (
+		<div className="App">
+			<HomeButton />
+			<Switch>
+				<Route exact path="/" component={Home} />
+				<Route path="/Map" exact component={MapContainer} />
+				<Route path="/Description/:id" exact component={Description} />
+				<Route path="/Booking" exact component={Booking} />
+			</Switch>
+		</div>
+	);
 }
 
 export default App;

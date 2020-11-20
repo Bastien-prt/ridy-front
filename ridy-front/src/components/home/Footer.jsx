@@ -18,7 +18,7 @@ const Footer = () => {
 					alt="twitter"
 				/>
 			</div>
-			<p>©GitBusters for ridy - 2020</p>
+			<p>©GitBusters for Ridy - Nov. 2020</p>
 		</footer>
 	);
 };

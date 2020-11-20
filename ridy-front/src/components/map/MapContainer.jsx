@@ -3,14 +3,24 @@ import { Link } from "react-router-dom";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
 
 import "../../style/css/MapContainer.css";
+import axios from "axios";
 
 const mapStyles = {
-  width: "400px",
-  height: "400px",
+  width: "100%",
+  height: "100%",
 };
 
 const MapContainer = ({ google }) => {
   const [info, setInfo] = useState("");
+  const [newArray, setNewArray] = useState([]);
+  const [objectStore, setObjectStore] = useState({});
+
+  useEffect(() => {
+    axios
+      .get(`https://gitbusters.herokuapp.com/api/rides/`)
+      .then((response) => response.data)
+      .then((data) => setNewArray(data));
+  }, []);
 
   const [stores, setStores] = useState([
     { latitude: 44.8115510558411, longitude: -0.5972854563965946 },
@@ -25,28 +35,35 @@ const MapContainer = ({ google }) => {
     { latitude: 44.88140146099171, longitude: -0.6122024361043721 },
   ]);
 
-  const displayMarkers = () => {
-    return stores.map((store, index) => {
+  const handleClick = (array) => {
+    setInfo(
+      <div className='boxPoney'>
+        <img className='image-map' src={array.photo} alt='yo' />
+        <div className='box-info-poney'>
+          <div className='info'> {array.name} </div>
+          <div className='info'>
+            {" "}
+            {array.seat} people - {array.price} golden coins{" "}
+          </div>
+        </div>
+        <Link to={`/description/${array.id}`}>
+          <button className='bookNow'>Book now</button>
+        </Link>
+      </div>
+    );
+  };
+
+  const displayMarkers = (e) => {
+    return newArray.map((array) => {
       return (
         <Marker
-          key={index}
-          id={index}
+          key={array.id}
+          id={array.id}
           position={{
-            lat: store.latitude,
-            lng: store.longitude,
+            lat: array.latitude,
+            lng: array.longitude,
           }}
-          onClick={() =>
-            setInfo(
-              <div>
-                <p> Petit Soleil </p>
-                <p> 4 personnes </p>
-                <p> 400 € </p>
-                <Link to='/Booking'>
-                  <button>Book now</button>
-                </Link>
-              </div>
-            )
-          }
+          onClick={() => handleClick(array)}
         />
       );
     });
@@ -54,10 +71,8 @@ const MapContainer = ({ google }) => {
 
   return (
     <div className='map-box'>
-      {/* <div className="map-box"> */}
       <p className='test1'>{info}</p>
       <Map
-        // className="map"
         google={google}
         zoom={11}
         style={mapStyles}

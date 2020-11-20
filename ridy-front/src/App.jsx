@@ -6,6 +6,8 @@ import MapContainer from "./components/map/MapContainer";
 import Description from "./components/description/Description";
 import Booking from "./components/booking/Booking";
 
+import HomeButton from "./components/homeButton/HomeButton";
+
 function App() {
   return (
     <div className='App'>

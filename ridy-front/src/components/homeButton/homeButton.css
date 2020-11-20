@@ -1,0 +1,10 @@
+.homeButton{
+    position: fixed;
+    top:2%;
+    left:2%;      
+    z-index:1;
+}
+
+img {
+    width:2rem;
+}

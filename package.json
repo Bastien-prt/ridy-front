@@ -1,0 +1,22 @@
+{
+  "name": "ridy-front",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bastien-prt/ridy-front.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bastien-prt/ridy-front/issues"
+  },
+  "homepage": "https://github.com/Bastien-prt/ridy-front#readme",
+  "dependencies": {
+    "react-responsive-carousel": "^3.2.10"
+  }
+}

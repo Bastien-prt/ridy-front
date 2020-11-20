@@ -1,21 +1,23 @@
 .carousel {
 	width: 100%;
 	overflow: hidden;
-	height: 400px;
-	margin-bottom: -19px;
+	margin-bottom: -20px;
 	font-size: 20px;
 }
 .picture {
-	height: 300px;
+	height: 500px;
 	width: auto;
 	object-fit: cover;
-	opacity: 0.3;
+	opacity: 0.4;
 }
 
 .carousel .thumbs {
 	display: none;
 }
-
+.rent {
+    text-align: center;
+    padding-bottom: 10px;
+}
 .carousel-content {
 	width: 90%;
 	position: absolute;
